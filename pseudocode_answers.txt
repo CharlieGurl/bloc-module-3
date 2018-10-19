@@ -1,0 +1,45 @@
+Checkpoint 2: Intro to Computer Science: 
+1.Programmers use pseudocode to break down their steps for creating algorithms.  They aren’t in any particular language, so they are versatile and help to brainstorm ideas. 
+
+2.Pseudocode would not run on the computer, it is almost like comments that describe what we are doing, but with keywords. 
+
+Assignment: 
+
+1.
+INPUT first number
+INPUT second number
+  IF first number is greater than second number THEN
+  PRINT first number
+ELSE print second number
+END IF
+
+2. 
+FUNCTION Print1to100()
+  FOR each number 1-100
+    PRINT number and go to new line;
+  END FOR
+END FUNCTION
+
+3.
+FUNCTION searchForName()
+  FOR each contact in phone book
+   IF name found in loop is equal to name 
+     RETURN text “found name” + the name found
+   ELSE name is not found
+     RETURN text "no name found"
+   END IF
+  END FOR
+END FUNCTION
+
+
+4. 
+
+var people = ['Sally Smith', 'Billy Smith', 'Javon James', 'Darius Mitchel'];
+
+function nameSearch(name) {
+    for(var i=0; i < people.length; i++) {
+        if(people[i] === name) {
+            return "Found name " + name;
+        }
+    }   
+}
