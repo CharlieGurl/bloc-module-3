@@ -1,0 +1,117 @@
+CHECKPOINT #3: INTRO TO CLEAN CODE: 
+
+Clean code is code that is simple, DRY, nested properly, and easy to understand and debug.  Clean code is written in a way that is short but sweet...we quickly understand what is going on where. It is important so that other developers can efficiently and thoroughly understand our code. 
+Wow, that article is intense.  It is hard to believe that Toyota wouldn’t have had the code tested before releasing a product that is life threatening (or maybe not hard to believe)...yikes.  I feel like there are a lot of objects that rely on computers and high quality code.  I am thinking of airplanes and the programs used on board, but also I imagine air control uses computer programming to land planes.  If there was a flaw in the system there, the results would be unimaginable.  This also makes me think about some of the flaws in Amazon’s Alexa program, where conversations had been recorded and sent to third parties.  
+
+
+
+
+
+3.I would not consider this to be clean code as it can be re-written as self-documenting code and we can remove the comments. 
+
+FUNCTION convertTemperature(x, y)             
+  IF y = "Fahrenheit" THEN       
+    SET fahrenheitToCelcius to (x−32) * (5/9)       
+    PRINT fahrenheitToCelcius                      
+  ELSE IF y = "Celcius" THEN         
+    SET celciusToFahrenheit to x * 1.8000 + 32.00   
+    PRINT celciusToFahrenheit                   
+  END IF
+END FUNCTION
+
+4. I would consider this to be clean code because it has a single responsibility, there isn’t repeating, it is nested appropriately 
+
+
+5. A. 
+
+FUNCTION paymentDue(subTotal, discountRate, paymentType)
+  PRINT "Your total due is: " + subTotal * discountRate + (subTotal * tax)
+END FUNCTION
+
+FUNCTION paymentType 
+  IF paymentType = 'CASH' THEN
+    CALL getPayment RETURNING amount
+    PRINT "Change due: " + amount - subTotal * discountRate + (subTotal * tax)
+  ELSE IF paymentType = 'CREDIT CARD' THEN
+    CALL getPayment RETURNING amount
+    PRINT "Your credit card has been charged: " + subTotal * discountRate + (subTotal      * tax)
+  END IF
+END FUNCTION
+
+
+B. 
+FUNCTION checkoutBook(book, guest)
+  IF guest.accountActive AND NOT(guest.hasOverdueBooks) AND guest.outstandingFees     = 0 THEN
+    APPEND book to guest.books AND SET book.status to "Checked Out" AND PRINT "Your books have been issued."
+   END IF
+   ELSE
+     PRINT "Unable to check out book."
+
+  END IF
+END FUNCTION
+
+
+C. 
+CLASS AccountActivities
+  FUNCTION deposit(amount)
+    SET balance to balance + amount
+  END FUNCTION
+
+  FUNCTION withdraw(amount)
+    IF balance > amount THEN
+      SET balance to balance - amount
+    END
+  END FUNCTION
+
+
+  FUNCTION displayBalance
+    PRINT balance
+  END FUNCTION
+END CLASS
+
+CLASS accountOffers
+  FUNCTION creditCardOffer
+    IF NOT(customer.hasCreditCard) THEN
+      CALL offerCreditCard
+    END
+ END FUNCTION
+
+  FUNCTION checkStatus
+    IF NOT(customer.hasCheckingAccount) THEN
+      CALL offerCheckingAccount
+    END
+  END FUNCTION
+END CLASS
+
+
+6. 
+
+function perfectSquare (arr) {
+  var sum = 0; 
+  for (var i = 0; i < arr.length; i ++) {
+    sum += arr [i];  
+  }
+    if (sum % Math.sqrt(sum) === 0 ) {
+      return Math.sqrt(sum); 
+    } else {
+      return sum; 
+    }
+}
+
+
+
+7. 
+
+
+function duplicateItems (arr) {
+  var first = arr[0];
+  for (var i = 1; i < arr.length; i ++) {
+    if (arr[i] !== first) {
+      return false;
+    } else {
+      return true; 
+    }
+  }
+  return first; 
+}
+
