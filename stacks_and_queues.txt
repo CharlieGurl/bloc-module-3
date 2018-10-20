@@ -1,0 +1,81 @@
+CHECKPOINT 7: STACKS AND QUEUES:
+
+1.The main difference between a stack and a queue has to do with how old elements leave list and new elements enter the list.  In a stack, the last elements to arrive, leave first and in a queue, the first elements in are also the first out. 
+
+2.They are similar in that they both linear data structures on which we can perform insertion and deletion operations.  They allow us to rank tasks and create an order of operations. 
+
+3. If I was implementing the UNDO option in a word processor, I would use a stack as it utilizes the LIFO.  When we undo an edit in our document, we want the last thing edited, removed first. I would use the pop method with this.  In implementing the REDO option, I would also use a queue and append the element to the end of the list. 
+
+Programming Questions:
+1.
+FUNCTION Reverse (original)
+  INIT an empty stack
+  FOR each character in original 
+    CALL stack.push and PUSH character to stack array
+  END FOR
+  INIT an empty string
+  WHILE stack is greater than 0
+    CALL stack.pop and POP letter from string 
+  END WHILE
+  RETURN REVERSED
+END FUNCTION 
+
+Function reverse(str) {
+  var stack = [];
+  for(var i = 0; i < str.length; i ++); 
+    stack.push(str[i]);
+  }
+  var reverseStr = “ “; 
+  while(stack.length > 0) {
+   reverseStr += stack.pop();
+  }
+  return reverseStr;
+}
+
+2. I am not sure what is being asked here.  I assume from the wording that you are asking to solve the same question from #1 but moving data around from a stack and queue to reverse the string, as that would essentially make FIFO data mirror functionality of a LIFO data structure.  
+
+FUNCTION reverse(original)
+  INIT an empty queue
+  FOR each character in original 
+    CALL queue.push and push character to a queue array
+  END FOR
+  INIT empty stack
+  FOR each character in queue
+    CALL stack.push and push character into stack array
+  END FOR
+  INIT an empty string
+   WHILE queue is greater than 0
+      CALL queue.pop and pop letter from string
+  END WHILE
+  RETURN REVERSE
+END FUNCTION
+
+Function reverse(str) {
+  var q = [];
+  for (var i = 0; i < str.length; i ++) {
+    q.push(str[i]);
+  }
+  var stack = [];
+  for(var i =0; i < str.length; i ++) {
+  stack.push(q[i]);
+  }
+  var reverseStr = “ “;
+  while(q.length > 0) {
+  reverseStr += q.pop();
+  }
+  return reverseStr;
+}
+
+3.Implement enqueue and dequeue in class.  I’m confused here as we haven’t learned how to make a queue class or how to actually implement enqueue and dequeue.  So I will just assume there is a generic form wanted here. 
+
+Class Queue {
+  constructor() {
+    This.first = ‘purple’;
+    This.last = ‘blue’; 
+    This.size; 
+  }
+  enqueue(‘pink’) {
+  }
+  dequeue() {
+  }
+}
