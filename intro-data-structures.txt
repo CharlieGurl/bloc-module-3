@@ -1,0 +1,18 @@
+CHECKPOINT # 5: INTRO. TO DATA STRUCTURES:
+
+1.
+a. Var rideLine = [‘Vivian’, ‘Ava’, ‘Josh’, ‘Patrick’, ‘Mike’];
+b.rideLine.push(‘Mary’); 
+c.rideLine.indexOf(‘Josh’); 
+d.rideLine.indexOf(‘Emily’); will return -1
+e.rideLine.splice(1,0,’Melissa);
+F.var removePat = rideLine.splice(4,1); 
+
+2.Another real-world example of using a data structure could be an array for a family tree and more specifically, living members of a family. 
+
+3.I’m not sure what this question is actually asking, but I assume it is related to the set-up of question 1. 
+  -We would need two arrays, a paternal side and maternal side
+  -Each array would include family members composed as strings
+  -When a baby is born, it is placed at the end
+  -When someone is married the new family member’s name will be added to array immediately    behind their spouse
+  -If someone passes away, they are deleted
